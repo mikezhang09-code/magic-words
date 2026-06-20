@@ -1,6 +1,6 @@
 {
   "name": "ljg-explain-words",
-  "description": "Word Soul Master — deconstructs English words into etymology, core semantics, nuance spectrum, and visual topology. Generates Museum Quality HTML cards.",
+  "description": "Word Soul Master — deconstructs a single word (English or Chinese) into its etymology and core semantics, output in both Chinese and English with a bilingual epiphany. Accepts either-language input and finds the truest cross-language equivalent.",
   "author": {
     "name": "lijigang"
   }

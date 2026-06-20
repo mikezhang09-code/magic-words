@@ -5,8 +5,8 @@
     "name": "lijigang"
   },
   "metadata": {
-    "description": "A deep-dive word mastery tool. It deconstructs an English word into its etymology, core semantics, nuance spectrum, and visual topology. It generates a Museum Quality HTML card to help the user truly master the soul of the word.",
-    "version": "1.0.0"
+    "description": "A deep-dive bilingual word mastery tool. It deconstructs a single word (English or Chinese) into its etymology and core semantics, output in two parallel native versions — one Chinese, one English — each closing with a bilingual epiphany. Accepts either-language input and surfaces the truest cross-language equivalent.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
