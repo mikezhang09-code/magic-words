@@ -1,18 +1,18 @@
 {
-  "name": "ljg-explain-words",
-  "description": "Word Soul Master — deep-dive English word mastery skill for Claude Code",
+  "name": "magic-words",
+  "description": "Magic Words — a fun bilingual word-learning game for kids in Claude Code",
   "owner": {
-    "name": "lijigang"
+    "name": "mikezhang09"
   },
   "metadata": {
-    "description": "A deep-dive bilingual word mastery tool. It deconstructs a single word (English or Chinese) into its etymology and core semantics, output in two parallel native versions — one Chinese, one English — each closing with a bilingual epiphany. Accepts either-language input and surfaces the truest cross-language equivalent.",
-    "version": "1.1.0"
+    "description": "A kid-friendly bilingual word-mastery game. The Word Wizard turns a single word (English or Chinese) into a picture, a silly magic formula, a memory spell, an everyday example, and a tiny challenge — output as two parallel kid-native cards, one Chinese and one English, each with a fun chant. Accepts either-language input, surfaces the truest cross-language equivalent, and auto-scales tone for ages ~4–12. Inspired by lijigang's original 'Word Soul Master' (单词灵魂解剖师).",
+    "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "ljg-explain-words",
+      "name": "magic-words",
       "source": "./",
-      "description": "Word soul master skill. Use /ljg-explain-words <word> to deeply deconstruct any English word."
+      "description": "Word Wizard skill for kids. Use /magic-words <word> to turn any word into a fun bilingual learning card."
     }
   ]
 }

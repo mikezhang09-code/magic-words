@@ -1,20 +1,24 @@
-# ljg-skill-explain-words
+# magic-words
 
-单词灵魂解剖师 (Word Soul Master) — 一个 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Skill，深度解构一个词的核心语义，直击词的灵魂。**支持中英双语**：输入中文或英文皆可，输出「中文」与「English」两个母语级版本。
+单词魔法师 (Word Wizard) — 一个给小朋友的 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Skill。它把一个词变成**一幅画 + 一个搞笑公式 + 一句记忆咒语 + 一个小挑战**，让孩子"啊哈"一声就记住。**支持中英双语**：输入中文或英文皆可，输出「中文」与「English」两张母语级卡片，难度随词自动调节（适合约 4–12 岁）。
 
 ## 功能
 
-- 双语解构：「中文」「English」两个区块，各为母语级原创解释（非互译）
-- 核心语义：原始画面 + 核心意象公式 + 深层解释
-- 反向查词 (reverse lookup)：输入中文词，自动给出最贴切的英文对应词再深度解构（例：缘分 → serendipity）
-- 一语道破：每个区块各一句独立的中英双语哲学金句
+- 🪄 魔法师口吻：好玩、温暖、爱欢呼，绝不说教
+- 🎬 看见画面：每个词都先变成一幅好玩的小动画（**真实的词源故事**；编的会说"我们想象一下"，绝不把瞎编当真知识教）
+- ✨ 魔法公式 + 记忆咒语：傻气好记的公式和声音游戏，一秒记住
+- 🔤 拼读发音：给小朋友一个能直接读出来的拼读版（school → skool，curious → KYOOR-ee-us），音标留给大人
+- 🎤 顺口溜口诀：短、押韵、能跟着喊出来——是顺口溜，不是大道理
+- 🗣️ 用一用 + 🎯 小挑战：身边的例子 + 一个邀请孩子开口的小任务
+- 🌏 双语 & 反向查词：输入中文自动给出最贴切的英文词再讲解（例：勇敢 → brave）
+- 🎚️ 自动调节难度：简单词更可爱傻气，较难词加一点小故事和来源
 - 直接在对话中 Markdown 输出，轻量无依赖
 
 ## 安装
 
 ```bash
-/plugin marketplace add mikezhang09-code/ljg-skill-explain-words-bilingual
-/plugin install ljg-explain-words
+/plugin marketplace add mikezhang09-code/magic-words
+/plugin install magic-words
 ```
 
 ## 使用
@@ -22,42 +26,45 @@
 在 Claude Code 中输入（英文或中文皆可）：
 
 ```
-/ljg-explain-words Serendipity
-/ljg-explain-words 缘分
+/magic-words brave
+/magic-words 勇敢
 ```
 
 ## 输出示例
 
-输入一个词后，输出「中文」「English」两个区块（节选）：
+输入一个词后，输出「中文」「English」两张卡片（节选）：
 
 ```
 ## 中文
 
-### serendipity /ˌserənˈdɪpəti/ 机缘巧合；意外发现珍宝的能力
+### brave /breɪv/ 勇敢——心里有点怕，但还是去做了
 
-- 原始画面：三位锡兰（Serendip）王子在旅途中，总能从看似无关的线索里
-  推断出自己并未寻找的真相。
-- 核心意象：不刻意寻找 + 敏锐的眼睛 + 偶然的相遇 = 命运的馈赠
-- 解释：serendipity 不是单纯的"运气"。运气是**被动**地撞上好事；它则是
-  当幸运降临时，你**有能力认出它**……
+- 🎬 看见画面：🦁 一只小狮子腿在发抖，可还是抬起头，朝着大大的黑山洞走了进去。
+- ✨ 魔法公式：怕怕 😨 + 还是去 🚶 + 抬起头 🦁 = 勇敢 💪
+- 🪄 记忆咒语："brave" 听起来像"不累"——勇敢的人心里累，腿也累，可还是不放弃！
+- 🗣️ 用一用：第一次自己睡觉，我有点怕，但我很 brave。
+- 🎯 小挑战：你能说一件让你觉得自己很勇敢的事吗？
 
-> "You cannot search for serendipity; you can only become worthy of it.
-> 机缘无法被搜寻，只能被配得上。"
+> "腿在抖，心在跳，迈出一步就英豪！Knees go shake, heart goes quake — one big step is all it takes!"
 
 ## English
 
-### serendipity /ˌserənˈdɪpəti/ — 机缘巧合
+### brave /breɪv/ · say it: BRAYV — 勇敢
 
-- Original Image: three princes of *Serendip* who keep deducing things
-  they were never looking for.
-- Core Metaphor: not seeking + a sharp eye + a chance encounter = a gift
-  you didn't ask for
-- Insight: coined by Horace Walpole in 1754. Serendipity is not luck —
-  luck is **passive**; this is the **active faculty** of recognizing
-  fortune when it arrives by accident…
+- 🎬 See It: 🦁 a tiny lion, knees shaking, lifts its chin and walks right into the big dark cave.
+- ✨ Magic Formula: scared 😨 + go anyway 🚶 + chin up 🦁 = brave 💪
+- 🪄 Memory Spell: a brave kid is "brrr… AVE!" — you shiver (brrr) but still shout hooray (ave)!
+- 🗣️ Use It: I was scared on the high slide, but I was brave and went down.
+- 🎯 Mini Quest: Strike your bravest superhero pose — what are you brave enough to try today?
 
-> "Chance favors the connected mind. 偶然，偏爱善于联结的头脑。"
+> "Wobble, wobble, BRAYV! Take the step and be so brave! 抖一抖，喊一声，勇敢迈步往前冲！"
 ```
+
+## 致谢 Credits
+
+灵感来自 [lijigang](https://github.com/lijigang) 的原作 **单词灵魂解剖师 (Word Soul Master)** —— 一个面向成人的深度词源解构 Skill。本项目是它的**儿童版独立衍生作品**：保留"词源即画面"的内核，重写为给小朋友的魔法师口吻。原版仍独立存在、各自安装互不影响。
+
+Inspired by [lijigang](https://github.com/lijigang)'s original **Word Soul Master** (单词灵魂解剖师), a deep etymological deconstruction skill for adults. This is a standalone **kids' derivative** — it keeps the "etymology-as-picture" core and rewrites it in a playful Word Wizard voice. The original remains separate; the two install side by side without conflict.
 
 ## License
 
