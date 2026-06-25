@@ -28,17 +28,18 @@ Install/usage (from README):
 
 This is the spec — changes to behavior must preserve or deliberately revise this structure. Output is Markdown emitted directly into the conversation (no files, no HTML), authored in a playful "单词魔法师 / Word Wizard" voice (warm, fun, never preachy; emoji as pictures; examples from a kid's day). The skill **auto-detects input language** and always emits **two parallel cards in a fixed order**, `## 中文` then `## English`. The two are *native kid-level explanations of the same meaning, not translations of each other*. Those two `##` headers are the stable split points the future app will parse on — keep them verbatim.
 
-Each card contains five beats plus a chant:
+The contract is **deliberately aligned with the kids voice of the sibling `word-soul-dictionary` app** (`worker/prompt.ts` → `KIDS_SYSTEM_PROMPT`, parsed by `src/lib/api.ts` → `parseKidsCard`), so a card emitted here drops straight into that app's parser. **Only the kids dictionary was borrowed from — the adult "Word Soul" voice in that repo is out of scope and must not bleed in.** Each card is exactly a `###` headword line plus **five single-line beats, each led by a fixed emoji marker** that the app keys off — content comes right after the marker, with no inline text label:
 
-1. **Headword line** — `### {word}  /{IPA or pinyin}/  {一句话给小朋友的意思 / kid-friendly gloss}`
+1. **Headword line** — `### {word} /{IPA or pinyin}/ — {对应词}` (English card adds `· say it: {KID RESPELLING}` before the `—`). The em-dash carries the cross-language bridge word, not a gloss.
 2. 🎬 **看见画面 / See It** — the word's most fun, concrete mini-cartoon (the etymological image, story-fied), with emoji.
-3. ✨ **魔法公式 / Magic Formula** — a silly, sticky "X + Y = Z" formula.
-4. 🪄 **记忆咒语 / Memory Spell** — one sound-game/mnemonic (rhyme, "sounds like…", a hidden little word).
-5. 🗣️ **用一用 / Use It** — one example sentence from a kid's real day.
-6. 🎯 **小挑战 / Mini Quest** — a light task or question inviting the child to speak/act.
-7. **Chant** — one bilingual fun口诀 in a `>` blockquote. The two cards carry **distinct** chants (different angles), not the same one twice.
+3. 🧪 **魔法公式 / Magic Formula** — a silly, sticky potion `{emoji}{A} ＋ {emoji}{B} ＝ {emoji}{result}` (full-width ＋ ＝).
+4. ✨ **记忆咒语 / Memory Spell** — a rhyming, shout-it-out two-line chant (lines split by ／), ideally carrying a sound-game (rhyme / "sounds like…" / hidden little word). The two cards carry **distinct** chants, not the same one twice.
+5. 💬 **用一用 / Use It** — one example sentence from a kid's real day, then ` ｜ ` its other-language translation.
+6. 🎯 **小挑战 / Mini Quest** — a light task or question the child can speak/do right now.
 
-**Cross-language / reverse lookup:** when input and card language differ, the card uses the truest kid-appropriate equivalent word as its headword (e.g. Chinese input `勇敢` → the English card teaches `brave`).
+Marker history: this replaced an older shape (`🎬 / ✨ formula / 🪄 mnemonic / 🗣️ use / 🎯` + a `>` blockquote chant) that the dictionary's `parseKidsCard` could not read. Now: formula moved to 🧪, the chant lives in ✨ (the old 🪄 sound-game folded into it), Use It is 💬 and carries a translation. The kid respelling (`· say it:`) and the explicit auto-scale guidance are magic-words extras the dictionary lacks — keep them.
+
+**Cross-language / reverse lookup:** when input and card language differ, the card uses the truest kid-appropriate equivalent word as its headword (e.g. Chinese input `勇敢` → the English card teaches `brave`), and the headword's `— {对应词}` points back to the other language.
 
 **Auto-scale:** dial complexity by word difficulty — simpler/younger words lean cuter and sillier with almost no etymology; harder/older words may carry a real mini-story and a light touch of the word's "老家" (origin). Always stay encouraging.
 

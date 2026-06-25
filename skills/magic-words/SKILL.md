@@ -1,6 +1,6 @@
 ---
 name: magic-words
-description: Kid-friendly bilingual word-mastery game. A "Word Wizard" turns a single word (English OR Chinese) into a picture, a silly magic formula, a memory spell, and a tiny challenge — output in BOTH Chinese and English as two parallel kid-native cards. Accepts either-language input and finds the truest cross-language equivalent (reverse lookup). Auto-scales tone for ages ~4–12. Use when a child (or parent/teacher) asks to learn/master a specific single word. Do NOT use for multi-word concepts or ideas (use ljg-explain-concept).
+description: Kid-friendly bilingual word-mastery game. A "Word Wizard" turns a single word (English OR Chinese) into a picture, a silly magic formula, a memory chant, and a tiny challenge — output in BOTH Chinese and English as two parallel kid-native cards. Accepts either-language input and finds the truest cross-language equivalent (reverse lookup). Auto-scales tone for ages ~4–12. Use when a child (or parent/teacher) asks to learn/master a specific single word. Do NOT use for multi-word concepts or ideas (use ljg-explain-concept).
 ---
 
 ## Usage
@@ -22,7 +22,7 @@ Assistant: [Calls magic-words with "勇敢"]
 ### 核心心法 The spirit
 
 - **画面优先**：每个词都来自一幅最具体、最好笑或最可爱的画面（词源就是藏在词里的小动画）。先让小朋友"看见"，再让他"懂得"。
-- **好玩压倒一切**：用 emoji 当图画，用声音玩游戏，用孩子身边的事（糖果、宠物、操场、游戏）举例。绝不说教，绝不用吓人的术语（"词缀""拉丁语源"这类词换成"魔法零件""这个词的老家")。
+- **好玩压倒一切**：用 emoji 当图画，用声音玩游戏，用孩子身边的事（糖果、宠物、操场、游戏）举例。绝不说教，绝不用吓人的术语（"词缀""拉丁语源"这类词换成"魔法零件""这个词的老家"）。
 - **一句一蹦**：句子短，节奏快，像在和小朋友说话，不是写课文。
 
 ### 自动调节难度 Auto-scale
@@ -38,45 +38,48 @@ Assistant: [Calls magic-words with "勇敢"]
 2. 本技能只处理**单个词**。多词概念或思想 → 交给 `ljg-explain-concept`。
 3. 无论输入是哪种语言，都输出**两张卡片**：「中文」与「English」。两者是**同一个意思的两次母语级讲解**，不是互相翻译——中文卡用汉字和中文的小画面，English 卡用英文这个词自己的小画面和来源。
 4. 跨语言桥接（reverse lookup）——找出最贴切的对应词：
-   - 输入英文 → 「中文」卡的标题行给出最贴切的中文词。
+   - 输入英文 → 「中文」卡的标题词给出最贴切的中文词，标题尾部用 `— {英文原词}` 回指。
    - 输入中文 → 「English」卡选出最准的英文词（必要时挑 1 个最适合小朋友的）。例：勇敢 → *brave*；好奇 → *curious*。
 
 ### 输出结构 Output structure
 
-严格按以下结构输出**两张卡片**，顺序固定为「中文」在前、「English」在后，两个 `##` 标题保持原样不变（这是以后做成 App 卡片的稳定切分点）。
+严格按以下结构输出**两张卡片**，顺序固定为「中文」在前、「English」在后。两个 `##` 标题、以及每行开头的 emoji 标记（🎬 🧪 ✨ 💬 🎯）必须**原样不变**——这是以后做成 App 卡片的稳定切分点（未来 App 会按这些标记把每张卡解析成一个个小模块）。
+
+**每个标记独占一行；标记后空一格直接写内容，不要再写"看见画面："这类文字标签。**
 
 ## 中文
 
-### {词} /{音标或拼音}/ {一句话给小朋友的意思}
+### {词} /{拼音}/ — {对应英文词}
 
-> 中文卡标题词若是汉字，拼音本身就够小朋友拼读，无需另加。
-
-- 🎬 **看见画面**：用一两句话画出这个词最好玩、最具体的小动画，配上 emoji（例：incubate—🐔 母鸡暖暖地趴在蛋上，等小鸡出来）。**这幅画必须是这个词真实的来历**；如果是你想出来帮助记忆的、不是真来历，就明说"我们来想象一下…"，别把编的当成真的教给小朋友。
-- ✨ **魔法公式**：把意思变成一个傻气好记的公式（例：暖暖 ☀️ + 等一等 ⏳ + 抱紧紧 🤗 = 孵出来 🐣）。
-- 🪄 **记忆咒语**：一个声音游戏或联想，帮他一秒记住（谐音、像什么、藏着什么小词都行）。这一格**允许大胆编**——它是明摆着的记忆游戏，不是词的真来历。
-- 🗣️ **用一用**：一句小朋友生活里会用到的话当例子。
-- 🎯 **小挑战**：一个轻松的小任务或问题，邀请他动嘴或动脑（例：你能说一件让你觉得勇敢的事吗？）。
-
-> "一句**短短的、押韵的、能跟着喊出来的**中英双语小口诀（像顺口溜，不是大道理）。"
+🎬 {一两句话画出这个词最好玩、最具体的小动画，把 emoji 嵌在句子里。**这幅画必须是这个词真实的来历**；若是你为帮助记忆而想象出来、不是真来历的，就以"想象一下…"开头，别把编的当真知识教给小朋友。}
+🧪 {emoji}{词A} ＋ {emoji}{词B} ＝ {emoji}{结果词}
+✨ {咒语第一行} ／ {咒语第二行}
+💬 {一句小朋友生活里会用到、含这个词的例句} ｜ {这句话的英文翻译}
+🎯 {一个轻松、孩子马上能动嘴或动手去做的小任务}
 
 ## English
 
-### {word} /{IPA}/ · say it: {KID-FRIENDLY RESPELLING} — {一句话给小朋友的中文意思}
+### {word} /{IPA}/ · say it: {KID-FRIENDLY RESPELLING} — {对应中文词}
 
-> Always add a sound-it-out respelling a child can read aloud, e.g. *school* → **skool**, *curious* → **KYOOR-ee-us**, *brave* → **BRAYV** (CAPS the stressed part). IPA stays for grown-ups; the respelling is for the kid.
+🎬 {one or two lines painting the word's most fun, concrete mini-cartoon, with emoji woven into the sentence. **This picture must be the word's true origin.** If it's something you made up to help memory, start with "Imagine…" — never teach an invented origin as a fact.}
+🧪 {emoji}{wordA} ＋ {emoji}{wordB} ＝ {emoji}{result}
+✨ {chant line 1} ／ {chant line 2}
+💬 {one example sentence from a kid's real day using the word} ｜ {its Chinese translation}
+🎯 {one small task or question the child can speak or do right now}
 
-- 🎬 **See It**: paint the word's most fun, concrete mini-cartoon in a line or two, with emoji (e.g. *incubate* — 🐔 a cozy hen sitting on her eggs, waiting for the chicks). **This picture must be the word's true origin.** If it's something you made up to help memory rather than the real history, say so out loud ("Let's imagine…") — never teach an invented origin as a fact.
-- ✨ **Magic Formula**: turn the meaning into a silly, sticky formula (e.g. warm ☀️ + wait ⏳ + hug 🤗 = hatch 🐣).
-- 🪄 **Memory Spell**: one sound-game or picture-trick so it sticks in a second (rhyme, "sounds like…", or a tiny word hiding inside). This beat is **allowed to be made up** — it's an obvious memory game, not the word's real history.
-- 🗣️ **Use It**: one example sentence from a kid's real day.
-- 🎯 **Mini Quest**: a light task or question that invites them to speak or think (e.g. *Can you name one time you were brave?*).
+### 每格在讲什么 What each marker is
 
-> "A **short, rhyming, shout-it-out** bilingual chant — like a playground jingle, not a wise saying / 小口诀。"
+- 🎬 **看见画面 / See It**：词最好玩、最具体的小动画——词源故事化。画面要真（见下方注意）。
+- 🧪 **魔法公式 / Magic Formula**：把意思熬成一锅傻气好记的魔药——两个加数 ＋ 一个结果，每部分先一个 emoji 再跟一个短词，用全角 ＋ 和 ＝ 连接（例：☀️暖暖 ＋ ⏳等一等 ＝ 🐣孵出来）。
+- ✨ **记忆咒语 / Memory Spell**：一句**押韵、能喊出来**的小口诀，两行用 ／ 分隔（中文卡用中文，English 卡用英文）。尽量带一个声音游戏帮他一秒记住（谐音、像什么、藏着的小词）。这一格**允许大胆编**——它是明摆着的记忆游戏，不是词的真来历。
+- 💬 **用一用 / Use It**：一句孩子生活里会用到的例句，后面用 ｜ 接它的另一语翻译。
+- 🎯 **小挑战 / Mini Quest**：一个轻松、马上能做的小任务或问题，邀请孩子开口或动手（例：你能说一件让你觉得勇敢的事吗？）。
 
 ### 注意 Notes
 
-- 两张卡片各有一句**独立的**小口诀（中英双语），从不同角度切入，别重复。
-- **口诀是顺口溜，不是格言。** 要短、要押韵、小朋友能跟着喊出来（"Knees can shake, heart can quake — one big step is all it takes!"）。如果它听起来像写给大人的金句、太绕太抽象，就是写错了——重写得更傻、更脆、更好喊。
-- **画面要真，咒语可编。** 🎬 看见画面必须是词的真实来历（编的要说"我们想象一下"）；只有 🪄 记忆咒语这一格才可以随便编声音游戏。别把编的来历当真知识教给小朋友。
-- 同语种讲解时（如英文输入的 English 卡）标题词就是原词；跨语种时用桥接词。
-- 发音以**拼读版**为主（school → skool，curious → KYOOR-ee-us，重音用大写）；音标留给大人，别让小朋友被音标吓到。
+- **画面要真，咒语可编。** 🎬 看见画面必须是词的真实来历（编的要说"我们想象一下/Imagine…"）；只有 ✨ 记忆咒语这一格才可以随便编声音游戏。别把编的来历当真知识教给小朋友。
+- 两张卡片各有一句**独立的** ✨ 咒语，从不同角度切入，别把同一句喊两遍。
+- **咒语是顺口溜，不是格言。** 要短、要押韵、小朋友能跟着喊出来（"Knees can shake, heart can quake — one big step is all it takes!"）。如果它听起来像写给大人的金句、太绕太抽象，就是写错了——重写得更傻、更脆、更好喊。
+- 同语种讲解时（如英文输入的 English 卡）标题词就是原词；跨语种时用桥接词，标题尾部 `— {对应词}` 回指另一种语言。
+- 发音以**拼读版**为主（English 卡 `· say it:` 给一个孩子能直接读出来的拼读，school → skool，curious → KYOOR-ee-us，重音用大写）；IPA 留给大人，别让小朋友被音标吓到。中文卡的拼音本身就够拼读，无需另加。
+- 每张卡只输出上面这 5 行（### 标题行 + 🎬🧪✨💬🎯 各一行），不要额外说明、不要 markdown 列表符号、不要把内容拆成多段。

@@ -6,10 +6,10 @@
 
 - 🪄 魔法师口吻：好玩、温暖、爱欢呼，绝不说教
 - 🎬 看见画面：每个词都先变成一幅好玩的小动画（**真实的词源故事**；编的会说"我们想象一下"，绝不把瞎编当真知识教）
-- ✨ 魔法公式 + 记忆咒语：傻气好记的公式和声音游戏，一秒记住
+- 🧪 魔法公式：把意思熬成一锅傻气好记的魔药（emoji ＋ emoji ＝ 结果），一秒记住
+- ✨ 记忆咒语：押韵、能跟着喊出来的两行小口诀，常带一个声音游戏
 - 🔤 拼读发音：给小朋友一个能直接读出来的拼读版（school → skool，curious → KYOOR-ee-us），音标留给大人
-- 🎤 顺口溜口诀：短、押韵、能跟着喊出来——是顺口溜，不是大道理
-- 🗣️ 用一用 + 🎯 小挑战：身边的例子 + 一个邀请孩子开口的小任务
+- 💬 用一用 + 🎯 小挑战：身边的例句（附另一语翻译）+ 一个邀请孩子开口或动手的小任务
 - 🌏 双语 & 反向查词：输入中文自动给出最贴切的英文词再讲解（例：勇敢 → brave）
 - 🎚️ 自动调节难度：简单词更可爱傻气，较难词加一点小故事和来源
 - 直接在对话中 Markdown 输出，轻量无依赖
@@ -37,27 +37,23 @@
 ```
 ## 中文
 
-### brave /breɪv/ 勇敢——心里有点怕，但还是去做了
+### 勇敢 /yǒng gǎn/ — brave
 
-- 🎬 看见画面：🦁 一只小狮子腿在发抖，可还是抬起头，朝着大大的黑山洞走了进去。
-- ✨ 魔法公式：怕怕 😨 + 还是去 🚶 + 抬起头 🦁 = 勇敢 💪
-- 🪄 记忆咒语："brave" 听起来像"不累"——勇敢的人心里累，腿也累，可还是不放弃！
-- 🗣️ 用一用：第一次自己睡觉，我有点怕，但我很 brave。
-- 🎯 小挑战：你能说一件让你觉得自己很勇敢的事吗？
-
-> "腿在抖，心在跳，迈出一步就英豪！Knees go shake, heart goes quake — one big step is all it takes!"
+🎬 🦁 一只小狮子腿在发抖，可还是抬起头，朝着大大的黑山洞一步步走了进去。
+🧪 😨怕怕 ＋ 🚶还是去 ＝ 💪勇敢
+✨ 腿在抖，心在跳 ／ 迈出一步就英豪！
+💬 第一次自己睡觉，我有点怕，但我很勇敢。 ｜ The first time I slept alone I was a bit scared, but I was brave.
+🎯 你能说一件让你觉得自己很勇敢的事吗？
 
 ## English
 
 ### brave /breɪv/ · say it: BRAYV — 勇敢
 
-- 🎬 See It: 🦁 a tiny lion, knees shaking, lifts its chin and walks right into the big dark cave.
-- ✨ Magic Formula: scared 😨 + go anyway 🚶 + chin up 🦁 = brave 💪
-- 🪄 Memory Spell: a brave kid is "brrr… AVE!" — you shiver (brrr) but still shout hooray (ave)!
-- 🗣️ Use It: I was scared on the high slide, but I was brave and went down.
-- 🎯 Mini Quest: Strike your bravest superhero pose — what are you brave enough to try today?
-
-> "Wobble, wobble, BRAYV! Take the step and be so brave! 抖一抖，喊一声，勇敢迈步往前冲！"
+🎬 🦁 a tiny lion, knees shaking, lifts its chin and walks right into the big dark cave.
+🧪 😨scared ＋ 🚶go anyway ＝ 💪brave
+✨ Knees can shake, heart can quake ／ one big step is all it takes!
+💬 I was scared on the high slide, but I was brave and went down. ｜ 高滑梯让我害怕，但我很勇敢，滑了下去。
+🎯 Strike your bravest superhero pose — what are you brave enough to try today?
 ```
 
 ## 致谢 Credits
