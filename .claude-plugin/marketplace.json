@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "A kid-friendly bilingual word-mastery game. The Word Wizard turns a single word (English or Chinese) into a picture, a silly magic formula, a memory spell, an everyday example, and a tiny challenge — output as two parallel kid-native cards, one Chinese and one English, each with a fun chant. Accepts either-language input, surfaces the truest cross-language equivalent, and auto-scales tone for ages ~4–12. Inspired by lijigang's original 'Word Soul Master' (单词灵魂解剖师).",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
